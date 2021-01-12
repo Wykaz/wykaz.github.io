@@ -1,0 +1,21 @@
+/*body {
+	margin: 0;
+}*/
+
+#box {
+	border: solid 1px;
+
+	margin-top: 50px;
+	margin-left: 50px;
+	width: 550px;
+    height: 350px;
+}
+
+#slider {
+        cursor: move;   /* signale à l'utilisateur que l'objet peut être déplacé */
+        position: absolute;
+        width: 150px;
+        height: 150px;
+        background: #58f;
+        border-radius: 6px;
+}
