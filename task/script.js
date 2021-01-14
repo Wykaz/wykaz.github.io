@@ -195,6 +195,7 @@ function closeAddList() {
 	//document.getElementById("").style.display = "none";
 }
 
+// Add Task
 function openAddTask() {
 	addBottom();
 	document.getElementById("addtask").style.display = "block";

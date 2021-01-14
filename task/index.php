@@ -6,8 +6,30 @@
 </head>
 <body>
 <div id="bottom"></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 <div id="addtask">
-	<h1>Add task</h1>
+        <h1>Add task</h1>
+        <p id="demo" onclick="closeAddTask()">+</p>
 	<from>
 		<input type="text" id="task_name" placeholder="Saisissez un titre" maxlength="10">
 		<input type="text" id="task_details" placeholder="Ajouter des détails" maxlength="10">
@@ -39,6 +61,28 @@
 	</from>
 </div>
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 <div class="containerlist">
 	
 	<div class="container containertask">
@@ -66,6 +110,22 @@
 	
 	<div class="container morecontainer"></div>
 </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
