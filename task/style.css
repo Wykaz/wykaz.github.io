@@ -1,21 +1,91 @@
-/*body {
+body {
 	margin: 0;
-}*/
-
-#box {
-	border: solid 1px;
-
-	margin-top: 50px;
-	margin-left: 50px;
-	width: 550px;
-    height: 350px;
 }
 
-#slider {
-        cursor: move;   /* signale à l'utilisateur que l'objet peut être déplacé */
-        position: absolute;
-        width: 150px;
-        height: 150px;
-        background: #58f;
-        border-radius: 6px;
+#bottom {
+	background-color: black;
+	opacity: 0.8;
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+}
+
+.containerlist {
+	display: flex;
+	flex-wrap: wrap;
+	align-items: flex-start;
+}
+
+.container {
+	padding: 1rem;
+	margin-top: 1rem;
+	margin-left: 1rem;
+	width: 200px;
+	border: 1px solid black;
+	border-radius: 1rem;
+}
+
+.containertask {
+	background-color: #999;
+}
+
+.morecontainer {
+	background-color: #AAA;
+	cursor: pointer;
+	height: 200px;
+}
+
+.box {
+	padding: 1rem;
+	background-color: white;
+	border: 1px solid black;
+	border-radius: 1rem;
+	margin-top: 1em;
+}
+
+.morebox {
+	background-color: #AAA;
+	cursor: pointer;
+}
+
+.draggable {
+	cursor: move;
+	display: block;
+}
+
+
+.draggable.dragging {
+	background-color: red;
+}
+
+#addtask {
+	display: flex;
+	flex-direction: column;
+	
+	background-color: gray;
+	position: absolute;
+	top: 20%;
+	bottom: 20%;
+	left: 20%;
+	right: 20%;
+	border: 1px solid black;
+	border-radius: 1rem;
+	padding: 1em;
+}
+
+#addtask from {
+	display: flex;
+	align-items: flex-start;
+	flex-direction: column;
+}
+
+.hidden {
+	visibility: hidden;
+}
+
+#addtask h1 {
+	margin: 0px;
+	margin-bottom: 10px;
 }
