@@ -91,21 +91,21 @@
 		<label class="box draggable" draggable="true"><input type="checkbox" id="action_1" name="scales">2</label>
 		<label class="box draggable" draggable="true"><input type="checkbox" id="action_1" name="scales">3</label>
 		<label class="box draggable" draggable="true"><input type="checkbox" id="action_1" name="scales">6</label>
-		<p class="box morebox">+</p>
+		<p class="box morebox" onclick="openAddTask()">+</p>
 	</div>
 
 	<div class="container containertask">
 		<h1>Task 2</h1>
 		<p class="box draggable" draggable="true"><input type="checkbox" id="action_1" name="scales">4</p>
 		<p class="box draggable" draggable="true"><input type="checkbox" id="action_1" name="scales">5</p>
-		<p class="box morebox">+</p>
+		<p class="box morebox" onclick="openAddTask()">+</p>
 	</div>
 	
 	<div class="container containertask">
 		<h1>Task 2</h1>
 		<p class="box draggable" draggable="true"><input type="checkbox" id="action_1" name="scales">9</p>
 		<p class="box draggable" draggable="true"><input type="checkbox" id="action_1" name="scales">10</p>
-		<p class="box morebox">+</p>
+		<p class="box morebox" onclick="openAddTask()">+</p>
 	</div>
 	
 	<div class="container morecontainer"></div>
