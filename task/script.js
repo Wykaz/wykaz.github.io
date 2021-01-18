@@ -134,7 +134,7 @@ setCookie("save", JSON.stringify(ssave), 365);
 
 //var jjj =  Object.assign(new Task, JSON.parse(getCookie("save"))[1]);
 
-//alert(jjj.getName());
+//alert(jjj.getName());;
 
 load();
 
