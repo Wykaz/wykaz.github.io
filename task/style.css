@@ -48,6 +48,7 @@ body {
 .morebox {
 	background-color: #AAA;
 	cursor: pointer;
+	text-align: center;
 }
 
 .draggable {
