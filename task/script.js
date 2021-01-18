@@ -95,10 +95,7 @@ class List {
 	}
 }
 
-load();
 
-const draggables = document.querySelectorAll('.draggable');
-const containers = document.querySelectorAll('.containertask');
 
 let myTask1 = new Task("quest Journaliere", "est 4 quete qui ce fait tout les jours");
 let myTask2 = new Task("10 minerais", "il faut récupéer 10 minerais et ce fait tout les jours");
@@ -139,7 +136,10 @@ setCookie("save", JSON.stringify(ssave), 365);
 
 //alert(jjj.getName());
 
+load();
 
+const draggables = document.querySelectorAll('.draggable');
+const containers = document.querySelectorAll('.containertask');
 
 
 
