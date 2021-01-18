@@ -1,4 +1,5 @@
 closeAddTask();
+closeAddList();
 onChange_addtask_option();
 
 
@@ -123,7 +124,7 @@ class Task {
 
 
 
-let myTask1 = new Task("quest Journaliere", "est 4 quete qui ce fait tout les jours");
+/*let myTask1 = new Task("quest Journaliere", "est 4 quete qui ce fait tout les jours");
 let myTask2 = new Task("10 minerais", "il faut récupéer 10 minerais et ce fait tout les jours");
 
 var listt = [];
@@ -155,12 +156,15 @@ ssave.push(myTask6);
 ssave.push(myTask26);
 
 
-setCookie("save", JSON.stringify(ssave), 365);
+setCookie("save", JSON.stringify(ssave), 365);*/
 
 
 //var jjj =  Object.assign(new Task, JSON.parse(getCookie("save"))[1]);
 
 //alert(jjj.getName());;
+const save_Cookie = "save";
+
+var save_list = [];
 
 load();
 
@@ -224,38 +228,58 @@ const containers = document.querySelectorAll('.containertask');
 
 
 function load() {
-	let list = getList();
+	let save_list_list_task = getCookie(save_Cookie);
+	if (save_list_list_task == "") {
+		setCookie(save_Cookie, JSON.stringify([]), 365);
+		save_list = [];
+	} else {
+		loadList(save_list_list_task);
+	}
+
+	reLoad();
+}
+
+function reLoad() {
 	let html = "";
 
-	for(let i = 0; i < list.length; i++) {
-		let list2 = list[i];
+	let cc = 0;
+	for(let i = 0; i < save_list.length; i++) {
+		
+
+		let list2 = save_list[i];
 		html += '<div class="container containertask">';
 			html += '<h1>' + list2.getName() + '</h1>';
 			for(let i2 = 0; i2 < list2.getTasks().length; i2++) {
 				let task = list2.getTasks()[i2];
 				html += '<label class="box draggable" draggable="true"><input type="checkbox" id="action_1" name="scales">' + task.getName() + '</label>';
 			}
-			html += '<p class="box morebox" onclick="openAddTask()">+</p>';
+			html += '<p class="box morebox" onclick="openAddTask(' + cc++ +')">+</p>';
 		html += '</div>';
 	}
-	html += '<div class="container morecontainer"></div>';
+	html += '<div class="container morecontainer" onclick="openAddList()">+</div>';
 
 	document.getElementById("contt2").innerHTML = html;
 }
 
-function getList() {
-	var lists = [];
-	let save_list_list_task = JSON.parse(getCookie("save"));
+/**
+ * 
+ */
+function loadList(save_list_list_task) {
+	save_list = [];
+
+	let save_list_list_task2 = JSON.parse(save_list_list_task);
 	
-	for(let i = 0; i < save_list_list_task.length; i++) {
-		let save_list_task = save_list_list_task[i];
+	for(let i = 0; i < save_list_list_task2.length; i++) {
+		let save_list_task = save_list_list_task2[i];
 		let list_task = [];
-		for(let i2 = 0; i2 < save_list_task.task.length; i2++) {
-			list_task.push(Object.assign(new Task, save_list_task.task[i2]));
-		}
-		lists.push(new List(save_list_task.name, list_task));
+		//alert(save_list_task.task);
+		//if (false) {
+			for(let i2 = 0; i2 < save_list_task.task.length; i2++) {
+				list_task.push(Object.assign(new Task, save_list_task.task[i2]));
+			}
+		//}
+		save_list.push(new List(save_list_task.name, list_task));
 	}
-	return lists;
 }
 
 // Cookie
@@ -280,6 +304,11 @@ function getCookie(cname) {
 		}
 	}
 	return "";
+}
+
+// Cookie
+function saveCookie() {
+	setCookie(save_Cookie, JSON.stringify(save_list), 365);
 }
 
 
@@ -469,20 +498,36 @@ function removeBottom() {
 	document.getElementById("bottom").style.display = "none";
 }
 
+// Add List
 function openAddList() {
 	addBottom();
-	//document.getElementById("").style.display = "block";
+	document.getElementById("addlist").style.display = "flex";
+}
+
+function submitAddList() {
+	save_list.push(new List(document.getElementById("list_name").value, []));
+	reLoad();
+	saveCookie();
+	closeAddList();
 }
 
 function closeAddList() {
 	removeBottom();
-	//document.getElementById("").style.display = "none";
+	document.getElementById("addlist").style.display = "none";
 }
 
 // Add Task
-function openAddTask() {
+function openAddTask(nb) {
 	addBottom();
-	document.getElementById("addtask").style.display = "block";
+	document.getElementById("addtask").style.display = "flex";
+	document.getElementById("button_addTask").onclick = function() { submitAddTask(nb); };
+}
+
+function submitAddTask(nb) {
+	save_list[nb].task.push(new Task(document.getElementById("task_name").value, document.getElementById("task_desc").value));
+	reLoad();
+	saveCookie();
+	closeAddTask();
 }
 
 function closeAddTask() {

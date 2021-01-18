@@ -35,6 +35,7 @@ body {
 	background-color: #AAA;
 	cursor: pointer;
 	height: 200px;
+	text-align: center;
 }
 
 .box {
@@ -61,8 +62,10 @@ body {
 	background-color: red;
 }
 
-#addtask {
+
+.window {
 	display: flex;
+	align-items: flex-start;
 	flex-direction: column;
 	
 	background-color: gray;
@@ -76,17 +79,11 @@ body {
 	padding: 1em;
 }
 
-#addtask from {
-	display: flex;
-	align-items: flex-start;
-	flex-direction: column;
+.window h1 {
+	margin: 0px;
+	margin-bottom: 10px;
 }
 
 .hidden {
 	visibility: hidden;
-}
-
-#addtask h1 {
-	margin: 0px;
-	margin-bottom: 10px;
 }
