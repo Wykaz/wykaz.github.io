@@ -500,8 +500,18 @@ function removeBottom() {
 
 // Add List
 function openAddList() {
-	addBottom();
-	document.getElementById("addlist").style.display = "flex";
+	/*Notification.requestPermission( function(status) {
+		console.log(status); // les notifications ne seront affichées que si "autorisées"
+		var n = new Notification("title", {body: "notification body"}); // this also shows the notification
+	  });*/
+
+	const title = 'Simple Title';
+	const options = {
+	body: 'Simple piece of body text.\nSecond line of body text :)'
+	};
+	registration.showNotification(title, options);
+	/*addBottom();
+	document.getElementById("addlist").style.display = "flex";*/
 }
 
 function submitAddList() {
