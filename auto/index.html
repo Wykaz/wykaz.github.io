@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Task</title>
+	<meta charset="UTF-8">
+</head>
+<body>
+    <script>
+        var windowObjectReference = window.open("https://hyperion-network.fr/vote");
+
+        setTimeout(function() {
+
+            windowObjectReference.document.getElementsByName("username").value = "Johnny Bravo"; 
+            alert("ello");
+            //windowObjectReference.document.querySelectorAll(".btn .btn-success .mt-3").click();
+        }, 1 *1000);
+
+    </script>
+
+
+
+</body>
+</html> 
